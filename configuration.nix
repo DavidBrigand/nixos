@@ -124,6 +124,7 @@ openfortivpn
 filezilla
 libreoffice
 git
+tilix
 # Gnome
 gnomeExtensions.dash-to-dock
 gnome.gnome-tweaks
