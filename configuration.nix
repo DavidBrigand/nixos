@@ -110,6 +110,7 @@ libreoffice
 git
 tilix
 gnome.gnome-tweaks
+cifs-utils
 
 # Gnome Extensions
 gnomeExtensions.dash-to-dock
