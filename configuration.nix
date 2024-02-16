@@ -139,6 +139,6 @@ services.teamviewer.enable = true;
 
 programs.bash.shellAliases = {
     nix-switch = "sudo nixos-rebuild switch";
-    nix-up = "sudo nixos-rebuild switch --upgrade";
+    nix-up = "/bin/sh ~/Scripts/nix-up.sh";
   };
 }
