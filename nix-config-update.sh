@@ -21,9 +21,9 @@ echo "Comparaison des checksum"
 LOCAL=$(md5sum "/etc/nixos/configuration.nix" | cut -d ' ' -f 1)
 REMOTE=$(md5sum "/tmp/nixos/configuration.nix" | cut -d ' ' -f 1)
 
-    if [ "$LOCAL" != "$REMOTE" ] ;
-    then
-	    echo "Les Fichiers sont différents"
+if [ "$LOCAL" != "$REMOTE" ] ;
+then
+	echo "Les Fichiers sont différents"
         echo "  --> Sauvegarde de la configuration"
         sudo cp -f /etc/nixos/configuration.nix /etc/nixos/configuration.old
         echo "  --> Copie du Fichier configuration.nix"
@@ -31,12 +31,10 @@ REMOTE=$(md5sum "/tmp/nixos/configuration.nix" | cut -d ' ' -f 1)
         mkdir ~/Scripts
         cp -f Scripts/nix-up.sh ~/Scripts/nix-up.sh
         echo "  --> Mise à jour de la configuration"
-        sudo nixos-rebuild switch
-    fi
-
+	sudo nixos-rebuild switch
 else
-echo "Erreur de Git Clone"
-exit
+	echo "Erreur de Git Clone"
+	exit
 fi
 
 echo "Verification des Fichiers"
