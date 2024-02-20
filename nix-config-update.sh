@@ -15,14 +15,17 @@ git clone https://github.com/DavidBrigand/nixos.git
 
 # Le dossier a été créé par le git clone on continue
 if [ -d "/tmp/nixos" ]; then
-cd /tmp/nixos
-echo " "
-echo "Comparaison des checksum"
-LOCAL=$(md5sum "/etc/nixos/configuration.nix" | cut -d ' ' -f 1)
-REMOTE=$(md5sum "/tmp/nixos/configuration.nix" | cut -d ' ' -f 1)
+    cd /tmp/nixos
+    echo " "
+    echo "Comparaison des checksum"
+    LOCAL=$(md5sum "/etc/nixos/configuration.nix" | cut -d ' ' -f 1)
+    REMOTE=$(md5sum "/tmp/nixos/configuration.nix" | cut -d ' ' -f 1)
+else
+	echo "Erreur de Git Clone"
+	exit
+fi
 
-if [ "$LOCAL" != "$REMOTE" ] ;
-then
+if [ "$LOCAL" != "$REMOTE" ]; then
 	echo "Les Fichiers sont différents"
         echo "  --> Sauvegarde de la configuration"
         sudo cp -f /etc/nixos/configuration.nix /etc/nixos/configuration.old
@@ -32,9 +35,6 @@ then
         cp -f Scripts/nix-up.sh ~/Scripts/nix-up.sh
         echo "  --> Mise à jour de la configuration"
 	sudo nixos-rebuild switch
-else
-	echo "Erreur de Git Clone"
-	exit
 fi
 
 echo "Verification des Fichiers"
