@@ -141,6 +141,6 @@ services.teamviewer.enable = true;
 programs.bash.shellAliases = {
 	nix-switch = "sudo nixos-rebuild switch";
 	nix-up = "/bin/sh ~/Scripts/nix-up.sh";
-	nix-git= "curl -L "https://raw.githubusercontent.com/DavidBrigand/nixos/main/nix-config-update.sh" | /bin/sh ";
+	nix-git= "curl -L 'https://raw.githubusercontent.com/DavidBrigand/nixos/main/nix-config-update.sh' | /bin/sh ";
   };
 }
