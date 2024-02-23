@@ -2,7 +2,7 @@
 
 `curl -L "https://raw.githubusercontent.com/DavidBrigand/nixos/main/nix-config-update.sh" | /bin/sh `
 
-** Todo **
+**Todo**
 - Check si git Existe
 - Déployer la configuration des extensions Gnome
 - Activer les extensions Gnome
