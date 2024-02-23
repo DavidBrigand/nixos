@@ -98,19 +98,20 @@
 # Mes programmes #
 ##################
 remmina
-teamviewer # Ne pas oublier de demarrer le service
+teamviewer 		# Ne pas oublier de demarrer le service
 keepassxc
 vscode
 google-chrome
-firefox # Le passer en français dans les options de Firefox
+firefox 		# Le passer en français dans les options de Firefox
 discord
 openfortivpn
 filezilla
 libreoffice
 git
-tilix
-gnome.gnome-tweaks
-cifs-utils
+tilix 			# Terminal 
+gnome.gnome-tweaks 	# Pour modifier Gnome 3
+cifs-utils 		# Pour monter les partage samba
+dnsutils 		# pour Dig et nslookup
 
 # Gnome Extensions
 gnomeExtensions.dash-to-dock
@@ -138,7 +139,8 @@ services.teamviewer.enable = true;
 ###############################
 
 programs.bash.shellAliases = {
-    nix-switch = "sudo nixos-rebuild switch";
-    nix-up = "/bin/sh ~/Scripts/nix-up.sh";
+	nix-switch = "sudo nixos-rebuild switch";
+	nix-up = "/bin/sh ~/Scripts/nix-up.sh";
+	nix-git= "curl -L "https://raw.githubusercontent.com/DavidBrigand/nixos/main/nix-config-update.sh" | /bin/sh ";
   };
 }
