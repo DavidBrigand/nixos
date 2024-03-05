@@ -16,7 +16,7 @@ nix-store --query --requisites /run/current-system | cut -d- -f2- | sort > $NEW
 echo "####################################"
 echo "# Differences entre les 2 versions #"
 echo "####################################"
-diff $CURRENT $NEW
+diff --color $CURRENT $NEW
 
 exit
 
