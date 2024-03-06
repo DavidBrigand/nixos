@@ -29,15 +29,21 @@ if [ "$LOCAL" != "$REMOTE" ]; then
         sudo cp -f /etc/nixos/configuration.nix /etc/nixos/configuration.old
         echo "  --> Copie du Fichier configuration.nix"
         sudo cp -f /tmp/nixos/configuration.nix /etc/nixos/configuration.nix
-        echo "  --> Copie des Scripts"
-	mkdir ~/Scripts
-        cp -f Scripts/nix-up.sh ~/Scripts/nix-up.sh
+        
+	echo "  --> Copie des Scripts"
+	if [ -d "~/Scripts" ]; then
+		cp -f Scripts/nix-up.sh ~/Scripts/nix-up.sh
+  	else
+ 	mkdir ~/Scripts && cp -f Scripts/nix-up.sh ~/Scripts/nix-up.sh
+  	fi
+        
         echo "  --> Mise à jour de la configuration"
 	sudo nixos-rebuild switch
+ 	exit
 else
 	echo "Rien à faire : Verification des Fichiers"
 	LOCAL=$(md5sum "/etc/nixos/configuration.nix" | cut -d ' ' -f 1)
 	REMOTE=$(md5sum "/tmp/nixos/configuration.nix" | cut -d ' ' -f 1)
 	echo "LOCAL : $LOCAL"
 	echo "REMOTE : $REMOTE"
-fi
+ fi
