@@ -8,9 +8,7 @@ if [ -d "/tmp/nixos" ]; then
     rm -Rf /tmp/nixos
 fi
 
-
-echo " "
-# Clonage du repo
+echo "Clonage du repo"
 git clone https://github.com/DavidBrigand/nixos.git
 
 # Le dossier a été créé par le git clone on continue
@@ -35,7 +33,7 @@ if [ "$LOCAL" != "$REMOTE" ]; then
 	mkdir ~/Scripts
         cp -f Scripts/nix-up.sh ~/Scripts/nix-up.sh
         echo "  --> Mise à jour de la configuration"
-	sudo nixos-rebuild switch &
+	sudo nixos-rebuild switch
 else
 	echo "Rien à faire : Verification des Fichiers"
 	LOCAL=$(md5sum "/etc/nixos/configuration.nix" | cut -d ' ' -f 1)
