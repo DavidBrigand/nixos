@@ -31,7 +31,8 @@ if [ "$LOCAL" != "$REMOTE" ]; then
         sudo cp -f /etc/nixos/configuration.nix /etc/nixos/configuration.old
         echo "  --> Copie du Fichier configuration.nix"
         sudo cp -f /tmp/nixos/configuration.nix /etc/nixos/configuration.nix
-        mkdir ~/Scripts
+        echo "  --> Copie des Scripts"
+	mkdir ~/Scripts
         cp -f Scripts/nix-up.sh ~/Scripts/nix-up.sh
         echo "  --> Mise à jour de la configuration"
 	sudo nixos-rebuild switch
