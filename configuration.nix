@@ -111,12 +111,12 @@ tilix 			# Terminal
 gnome.gnome-tweaks 	# Pour modifier Gnome 3
 cifs-utils 		# Pour monter les partage samba
 dnsutils 		# pour Dig et nslookup
+rclone			# Synchro ftp, gdrive, etc...
 
 # Gnome Extensions
 gnomeExtensions.dash-to-dock
 gnomeExtensions.executor
 gnomeExtensions.tray-icons-reloaded
-
 ];
 
 ################
