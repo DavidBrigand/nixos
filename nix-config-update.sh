@@ -46,4 +46,4 @@ else
 	REMOTE=$(md5sum "/tmp/nixos/configuration.nix" | cut -d ' ' -f 1)
 	echo "LOCAL : $LOCAL"
 	echo "REMOTE : $REMOTE"
- fi
+fi
