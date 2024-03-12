@@ -142,6 +142,8 @@ programs.bash.shellAliases = {
 	nix-up="/bin/sh ~/Scripts/nix-up.sh";
 	nix-git="curl -L https://raw.githubusercontent.com/DavidBrigand/nixos/main/nix-config-update.sh | /bin/sh";
 	monip="curl ipinfo.io/ip";
+	rclone-backup="/bin/sh ~/Scripts/rclone-backup.sh";
+	rclone-restore="/bin/sh ~/Scripts/rclone-restore.sh";
   };
 }
 
