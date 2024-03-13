@@ -34,16 +34,16 @@ if [ "$LOCAL" != "$REMOTE" ]; then
 	if [ -d "~/Scripts" ]; then
 		cp -f Scripts/nix-up.sh ~/Scripts/nix-up.sh
   	else
- 	mkdir ~/Scripts && cp -f Scripts/nix-up.sh ~/Scripts/nix-up.sh
+ 		mkdir ~/Scripts && cp -f Scripts/nix-up.sh ~/Scripts/nix-up.sh
   	fi
-        
-        echo "  --> Mise à jour de la configuration"
-	sudo nixos-rebuild switch
- 	exit
 else
 	echo "Rien à faire : Verification des Fichiers"
 	LOCAL=$(md5sum "/etc/nixos/configuration.nix" | cut -d ' ' -f 1)
 	REMOTE=$(md5sum "/tmp/nixos/configuration.nix" | cut -d ' ' -f 1)
 	echo "LOCAL : $LOCAL"
 	echo "REMOTE : $REMOTE"
+	exit
 fi
+
+echo "  --> Mise à jour de la configuration"
+sudo nixos-rebuild switch
