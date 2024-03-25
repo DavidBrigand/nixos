@@ -118,6 +118,7 @@ mpv			# Lecteur Video
 gnomeExtensions.dash-to-dock
 gnomeExtensions.executor
 gnomeExtensions.tray-icons-reloaded
+gnomeExtensions.clipboard-history
 ];
 
 ################
